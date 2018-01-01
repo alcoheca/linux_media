@@ -197,6 +197,13 @@ config DVB_STV0900
 	help
 	  A DVB-S/S2 demodulator. Say Y when you want to support this frontend.
 
+config DVB_TDA18272
+	tristate "NXP TDA18272 based"
+	depends on DVB_CORE && I2C
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  A DVB-T/T2/C tuner module. Say Y when you want to support this frontend.
+
 config DVB_TDA8083
 	tristate "Philips TDA8083 based"
 	depends on DVB_CORE && I2C
@@ -503,6 +510,27 @@ config DVB_CXD2841ER
 	default m if !MEDIA_SUBDRV_AUTOSELECT
 	help
 	  Say Y when you want to support this frontend.
+
+config DVB_CXD2850
+	tristate "Sony CXD2850"
+	depends on DVB_CORE && I2C
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  Say Y when you want to support this frontend.
+
+config DVB_CXD2817
+	tristate "Sony CXD2817"
+	depends on DVB_CORE && I2C
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  Say Y when you want to support this frontend.
+
+config DVB_CXD2861
+	tristate "Sony CXD2861"
+	depends on DVB_CORE && I2C
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  Say Y when you want to support this tuner
 
 config DVB_RTL2830
 	tristate "Realtek RTL2830 DVB-T"
@@ -830,6 +858,13 @@ config DVB_ISL6423
 	default m if !MEDIA_SUBDRV_AUTOSELECT
 	help
 	  A SEC controller chip from Intersil
+
+config DVB_A8290
+	tristate "Allegro A8290 SEC controller"
+	depends on DVB_CORE && I2C
+	default m if !MEDIA_SUBDRV_AUTOSELECT
+	help
+	  A SEC controller.
 
 config DVB_A8293
 	tristate "Allegro A8293"
